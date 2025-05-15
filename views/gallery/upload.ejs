@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+
+<h2>Upload New Image</h2>
+<form action="/gallery/upload" method="POST" enctype="multipart/form-data">
+  <input type="file" name="image" accept="image/*" required>
+  <input type="text" name="category" placeholder="Category (optional)">
+  <button type="submit">Upload</button>
+</form>
+
+<%- include('../partials/footer') %>

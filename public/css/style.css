@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f9;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery-item {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input, button, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 5px;
+}
+
+.pagination a {
+  padding: 8px 12px;
+  background: #ddd;
+  color: #333;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.pagination a.active {
+  background: #333;
+  color: white;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+}
+
+.filters input, .filters select {
+  flex: 1;
+}
+
+.filters button {
+  flex: 0 0 100px;
+}
+
+/* Add these styles */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.auth-links, .dashboard-links {
+  margin-top: 2rem;
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+  margin-top: 2rem;
+}
+
+.footer p {
+  margin: 0; /* Removes default paragraph margins */
+}

@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<h2><%= user.username %>'s Uploads</h2>
+<div class="gallery">
+  <% images.forEach(image => { %>
+    <div class="gallery-item">
+      <img src="<%= image.path %>" alt="<%= image.filename %>">
+      <p>Category: <%= image.category %></p>
+    </div>
+  <% }); %>
+</div>
+
+<%- include('../partials/footer') %>

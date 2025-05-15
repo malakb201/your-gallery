@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+<main>
+  <h2>Welcome to My Gallery</h2>
+  <% if (!user) { %>
+    <div class="auth-links">
+      <a href="/auth/login" class="btn">Login</a>
+      <a href="/auth/register" class="btn">Register</a>
+    </div>
+  <% } else { %>
+    <div class="dashboard-links">
+      <a href="/gallery" class="btn">View Gallery</a>
+      <a href="/gallery/upload" class="btn">Upload Images</a>
+    </div>
+  <% } %>
+</main>
+
+<%- include('partials/footer') %>

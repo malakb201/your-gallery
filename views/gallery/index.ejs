@@ -1,0 +1,47 @@
+<%- include('../partials/header') %>
+
+<form action="/gallery" method="GET" class="filters">
+  <input type="text" name="search" placeholder="Search images..." value="<%= search || '' %>">
+  <select name="category">
+    <option value="">All Categories</option>
+    <% categories.forEach(cat => { %>
+      <option value="<%= cat %>" <%= currentCategory === cat ? 'selected' : '' %>>
+        <%= cat %>
+      </option>
+    <% }); %>
+  </select>
+  <button type="submit">Filter</button>
+</form>
+
+<div class="gallery">
+  <% images.forEach(image => { %>
+    <div class="gallery-item">
+      <img src="<%= image.path %>" alt="<%= image.filename %>">
+      <p>Uploaded by: <a href="/gallery/user/<%= image.user._id %>"><%= image.user.username %></a></p>
+      <p>Category: <%= image.category %></p>
+    </div>
+  <% }); %>
+</div>
+
+<% if (pages > 1) { %>
+  <div class="pagination">
+    <% if (page > 1) { %>
+      <a href="/gallery?page=<%= page-1 %><%= currentCategory ? `&category=${currentCategory}` : '' %><%= search ? `&search=${search}` : '' %>">Previous</a>
+    <% } %>
+
+    <% for (let i = 1; i <= pages; i++) { %>
+      <a 
+        href="/gallery?page=<%= i %><%= currentCategory ? `&category=${currentCategory}` : '' %><%= search ? `&search=${search}` : '' %>"
+        class="<%= i === page ? 'active' : '' %>"
+      >
+        <%= i %>
+      </a>
+    <% } %>
+
+    <% if (page < pages) { %>
+      <a href="/gallery?page=<%= page+1 %><%= currentCategory ? `&category=${currentCategory}` : '' %><%= search ? `&search=${search}` : '' %>">Next</a>
+    <% } %>
+  </div>
+<% } %>
+
+<%- include('../partials/footer') %>
